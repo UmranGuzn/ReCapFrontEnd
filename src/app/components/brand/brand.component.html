@@ -1,1 +1,7 @@
-<p>brand works!</p>
+<div class="container p-3">
+	<div *ngFor="let brand of brands" class="card mb-3">
+	<div class="card-body">
+	  {{brand.brandName}}
+	</div>
+  </div>
+</div>

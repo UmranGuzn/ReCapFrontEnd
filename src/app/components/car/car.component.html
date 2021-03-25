@@ -1,25 +1,39 @@
-<table class="table">
-	<thead>
-	 <tr>
-		<th>CarID</th>
-		<th>BrandId</th>
-		<th>ColorId</th>
-		<th>daily price</th>
-		<th>description</th>
-		<th>Model Year</th>
-	 </tr>
-	</thead>
-	<tbody>
-	 <tr *ngFor="let car of cars">
-		<td>{{car.carId}}</td>
-		<td>{{car.brandId}}</td>
-		<td>{{car.colorId}}</td>
-		<td>{{car.modelYear}}</td>
-		<td>{{car.dailyPrice}}</td>
-		<td>{{car.descriptions}}</td>
-		
+<div *ngIf="dataLoaded==false" class="spinner-border text-info" role="status">
+	<span class="visually-hidden">Loading...</span>
+</div>
 
-	  </tr>
-	</tbody>
-	
-</table>
+<div *ngIf="dataLoaded!=false" class="container p-3">
+	<div class="card-header">
+		<table class="table">
+			<thead>
+			<tr>
+			   <th>CarID</th>
+			   <th>BrandId</th>
+			   <th>ColorId</th>
+			   <th>daily price</th>
+			   <th>description</th>
+			   <th>Model Year</th>
+			</tr>
+		   </thead>
+		</table>
+		
+	</div>
+	<div *ngFor="let car of cars" class="card mb-3" >
+	<div  class="card-body">
+		<table class="table">
+			
+			<tbody>
+			 <tr>
+				<td>{{car.carId}}</td>
+				<td>{{car.brandName}}</td>
+				<td>{{car.colorName}}</td>
+				<td>{{car.dailyPrice}}</td>
+				<td>{{car.descriptions}}</td>
+				<td>{{car.modelYear}}</td>
+			  </tr>
+			</tbody>	
+		</table>
+	</div>
+  </div>
+</div>
+
