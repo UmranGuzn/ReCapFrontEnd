@@ -1,7 +1,8 @@
-<div class="container p-3">
-	<div *ngFor="let brand of brands" class="card mb-3">
+<div (click)="setCurrentBrand(brand)"  
+	*ngFor="let brand of brands" 
+	class="card mb-3"
+	routerLink="/cars/brand/{{brand.brandId}}">
 	<div class="card-body">
 	  {{brand.brandName}}
 	</div>
-  </div>
 </div>

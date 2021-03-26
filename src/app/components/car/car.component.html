@@ -2,27 +2,25 @@
 	<span class="visually-hidden">Loading...</span>
 </div>
 
-<div *ngIf="dataLoaded!=false" class="container p-3">
+<div *ngIf="dataLoaded!=false" class="card">
 	<div class="card-header">
 		<table class="table">
 			<thead>
 			<tr>
 			   <th>CarID</th>
-			   <th>BrandId</th>
-			   <th>ColorId</th>
-			   <th>daily price</th>
-			   <th>description</th>
+			   <th>Brand Name</th>
+			   <th>Color Name</th>
+			   <th>Daily Price</th>
+			   <th>Description</th>
 			   <th>Model Year</th>
 			</tr>
 		   </thead>
 		</table>
 		
 	</div>
-	<div *ngFor="let car of cars" class="card mb-3" >
-	<div  class="card-body">
+	<div *ngFor="let car of cars" class="card-body">
 		<table class="table">
-			
-			<tbody>
+			<tbody class="tbody" (click)="setCurrentCarDetails(car)" routerLink="/cars/{{car.carId}}">
 			 <tr>
 				<td>{{car.carId}}</td>
 				<td>{{car.brandName}}</td>
@@ -34,6 +32,6 @@
 			</tbody>	
 		</table>
 	</div>
-  </div>
+ 
 </div>
 

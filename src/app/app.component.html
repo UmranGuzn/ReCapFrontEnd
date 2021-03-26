@@ -3,18 +3,17 @@
 	<div class="container mb-3 p-4">
 		<hr/>
 		<div class="row">
-			<div class="col-md-3">
-			<app-brand></app-brand>
+			<div class="col-md-3 p-4">
+			<!-- <app-brand></app-brand>
 			<app-color></app-color>
-			<app-customer></app-customer>
-			<app-rental></app-rental>
+			<app-customer></app-customer> -->
+			<app-category></app-category>
 		</div>
-		<div class="col-md-9">
-			<app-car></app-car>
-			
+		<div class="col-md-9 p-4">
+			<router-outlet></router-outlet>
 		</div>
 		</div>
 	</div>
-    <router-outlet></router-outlet>
+   
 </div>
 
