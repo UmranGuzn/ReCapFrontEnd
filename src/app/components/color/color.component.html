@@ -1,10 +1,17 @@
+<div class="container mt-4 p-4">
+	<div class="container mt-3">
+		<div class="mb-3">
+			<input type="text" [(ngModel)]="filterText" class="form-control" id="filterText" placeholder="Search...">
+		</div>
+		<div *ngIf="filterText" class="alert alert-primary mb-3">
+			{{filterText}} aradınız!
+		</div>
+		<div (click)="setCurrentColor(color)" *ngFor="let color of colors | filterColor:filterText" class="card mb-3"
+			routerLink="/cars/color/{{color.colorId}}">
+			<div class="card-body">
+				{{color.colorName}}
+			</div>
+		</div>
 
-	<div (click)="setCurrentColor(color)" 
-	*ngFor="let color of colors" 
-	class="card mb-3"
-	routerLink="/cars/color/{{color.colorId}}">
-	<div class="card-body">
-	  {{color.colorName}}
 	</div>
-  </div>
-
+</div>

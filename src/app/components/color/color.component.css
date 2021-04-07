@@ -1,3 +1,6 @@
 .card-body:hover{
 	background-color: #c6d6bf;
 }
+.container{
+	max-width: 80%;
+}

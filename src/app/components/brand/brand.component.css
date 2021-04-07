@@ -1,4 +1,10 @@
-.card-body:hover{
+.card:hover{
 	background-color: #c6d6bf;
-	border: solid 1px;
+	border-radius: 5px;
+}
+.card{
+	border-radius: 5px;
+}
+.container{
+	max-width: 80%;
 }

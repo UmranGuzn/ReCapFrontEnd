@@ -9,17 +9,18 @@ import { CustomerComponent } from './components/customer/customer.component';
 import { RentalComponent } from './components/rental/rental.component';
 
 const routes: Routes = [ 
-  {path:"",pathMatch:"full", component:CarComponent},
+  {path:"",pathMatch:"full", component:CategoryComponent},
   {path:"cars",component:CarComponent},
   {path:"rentals",component:RentalComponent},
-  {path:"car",component:CarComponent},
+ // {path:"car",component:CarComponent},
   {path:"brand",component:BrandComponent},
   {path:"color",component:ColorComponent},
-  {path:"rental",component:RentalComponent},
-  {path:"customer",component:CustomerComponent},
+ // {path:"rental",component:RentalComponent},
+  //{path:"customer",component:CustomerComponent},
   {path:"cars/brand/:brandId",component:CarComponent},
   {path:"cars/color/:colorId",component:CarComponent},
-  {path:"cars/:carId",component:CarDetailComponent}
+  {path:"cars/:carId",component:CarDetailComponent},
+  {path:"cars/brand/:brandId/color/:colorId",component:CarComponent}
 ];
 
 @NgModule({

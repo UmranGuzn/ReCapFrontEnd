@@ -11,6 +11,7 @@ export class BrandComponent implements OnInit {
 
   brands:Brand[]=[];
   currentBrand:Brand;
+  filterText:""
   constructor(private brandService:BrandService) { }
 
 
@@ -25,7 +26,6 @@ export class BrandComponent implements OnInit {
     })
   }
   setCurrentBrand(brand:Brand){
-
     //console.log(category.brandName);
     this.currentBrand=brand;
   }

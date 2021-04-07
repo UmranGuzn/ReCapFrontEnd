@@ -1,0 +1,18 @@
+
+/* div.div{
+	width: 45%;
+	float: left;
+	margin-bottom: 5%;
+	margin-right: 5%;
+} */
+div.row{
+	margin-top: 5%;
+	margin-left: 2%;
+}
+div.col-md-8{
+	margin-top: 2%;
+	padding-right: 5%;
+}
+/* div.col-md-3{
+	width: 30%;
+} */
