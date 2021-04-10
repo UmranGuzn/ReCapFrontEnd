@@ -1,0 +1,87 @@
+<div class="d-gird gap-2">
+	<button type="button" class="btn btn-outline-success" data-bs-toggle="modal" data-bs-target="#rentModal">
+		Rent It
+	</button>
+</div>
+<div class="modal fade" id="rentModal" tabindex="-1" aria-labelledby="rentModalLabel" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title" id="rentModalLabel">
+					Rent
+				</h5>
+				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="close"></button>
+			</div>
+			<div class="modal-body">
+				
+				<label for="dailyPrice" class="col-4 col-form-label">Daily Price:</label>
+				<div class="form-group row mb-2">
+					<div class="col-8">
+						<input type="text" disabled="disabled" class="form-control" id="dailyPrice" [value]="car.dailyPrice">
+					</div>
+				</div>
+				<label for="customer" class="col-4 col-form-label">Customer:</label>
+				<div class="form-group row mb-2">
+					<div class="col-8">
+						<select [(ngModel)]="customerId" class="form-select">
+							<option *ngFor="let customer of customers" [value]="customer.userId">
+								{{customer.customerName}}
+							</option>
+						</select>
+					</div>
+				</div>
+				<label for="rentdate" class="col-4 col-form-label">Rent Date:</label>
+				<div class="form-group row mb-2">
+					<div class="col-8">
+						<input type="date" class="form-control" id="rentdate" value="{{getDate(1)}}"
+							[(ngModel)]="rentDate">
+					</div>
+				</div>
+				<label for="returndate" class="col-4 col-form-label">Return Date:</label>
+				<div class="form-group row mb-2">
+					<div class="col-8">
+						<input type="date" class="form-control" id="returndate"
+							value="{{getDate(2)}}" [(ngModel)]="returnDate">
+					</div>
+				</div>
+			</div>
+			<div class="modal-footer">
+				<button class="btn btn-primary" type="button" data-bs-dismiss="modal" (click)="create()">
+					Rent
+				</button>
+			</div>
+		</div>
+
+	</div>
+</div>
+
+
+<!-- <div class="container mt-5">
+	<div class="col-md-5">
+		<div class="mb-3">
+		<label for="exampleFormControlInput1" class="form-label">Customer Id</label>
+		<input type="number" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+	  </div>
+	</div>
+	<div class="col-md-5">
+		<div class="mb-3">
+		<label for="rentdate" class="form-label">Rent Date</label>
+		<input type="date" class="form-control" id="rentdate" placeholder="name@example.com">
+	  </div>
+	</div>
+	<div class="col-md-5">
+		<div class="mb-3">
+		<label for="returndate" class="form-label">Return Date</label>
+		<input type="date" class="form-control" id="returndate" placeholder="name@example.com">
+	  </div>
+	</div>
+	<div class="col-md-5">
+		<label for="checkbox">Var olan kartla mı ödemek istersiniz?</label>
+		<input type="checkbox" id="checkbox">
+	</div>
+	<div class="col-md-5">
+		<button class="btn btn-primary" routerLink="creditcard">
+			Payment
+		</button>
+	</div>
+</div> -->
