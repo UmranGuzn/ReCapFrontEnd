@@ -1,0 +1,96 @@
+<div class="row">
+	<div class="col-md-3">
+
+		<div class="col-md-8">
+			<p>Brand</p>
+			<select [(ngModel)]="brandFilter" class="form-select" aria-label="Default select example">
+				<option selected="selected">Choose a Brand</option>
+				<option *ngFor="let brand of brands" [value]="brand.brandId" [selected]="getSelectBrand(brand.brandId)">
+					{{brand.brandName}}</option>
+			</select>
+		</div>
+		<div class="col-md-8">
+			<p>Color</p>
+			<select [(ngModel)]="colorFilter" class="form-select" aria-label="Default select example">
+				<option selected>Choose a Color</option>
+				<option *ngFor="let color of colors" [value]="color.colorId" [selected]="getSelectColor(color.colorId)">
+					{{color.colorName}}</option>
+			</select>
+		</div>
+		<div class="col-md-8 d-grid gap-2">
+			<button class="btn btn-success" type="button"
+				routerLink="/cars/brand/{{brandFilter}}/color/{{colorFilter}}">
+				Select
+			</button>
+		</div>
+		<div class="col-md-8 d-grid gap-2">
+			<button class="btn btn-danger" type="button" routerLink="/cars">
+				Clear
+			</button>
+		</div>
+
+
+	</div>
+
+	<div class="col-md-8">
+		<div>
+			<!-- <button class="btn btn-success" routerLink="/cars">Back</button> -->
+			<div class="card border-light">
+				<div class="card-header">
+					<div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+						<div class="carousel-inner">
+							<div *ngFor="let image of images; let i = index" [ngClass]="getSliderClassName(i)">
+								<img src="{{imagePath}}/{{image.imagePath}}" class="d-block w-100" width="800"
+									height="400" alt="..." />
+							</div>
+						</div>
+						<button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+							data-bs-slide="prev">
+							<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+							<span class="visually-hidden">Previous</span>
+						</button>
+						<button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+							data-bs-slide="next">
+							<span class="carousel-control-next-icon" aria-hidden="true"></span>
+							<span class="visually-hidden">Next</span>
+						</button>
+					</div>
+				</div>
+				<div class="card-body" *ngIf="car">
+					<table class="table">
+						<thead>
+							<tr>
+								<th>Brand</th>
+								<th>Color</th>
+								<th>Daily Price</th>
+								<th>Descriptions</th>
+								<th>Model Year</th>
+
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>{{car.brandName}}</td>
+								<td>{{car.colorName}}</td>
+								<td>{{car.dailyPrice | currency :"₺"}}</td>
+								<td>{{car.descriptions}}</td>
+								<td>{{car.modelYear}}</td>
+							</tr>
+						</tbody>
+					</table>
+					<!-- <h1></h1>
+						<h2>{{car.colorName}}</h2>
+						<h3>{{car.dailyPrice}}</h3>
+						<h4>{{car.descriptions}}</h4>
+						<h5>{{car.modelYear}}</h5> -->
+				</div>
+				<!-- <div class="card-footer d-grid gap-2">
+					<button class="btn btn-warning" type="button" routerLink="rentcar">Rental</button>
+				</div> -->
+				<div class="d-grid gap-2 m-2" *ngIf="car ">
+					<app-rent-add [car]="car"></app-rent-add>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

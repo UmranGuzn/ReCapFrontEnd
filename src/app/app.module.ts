@@ -1,21 +1,34 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
-import { FormsModule } from "@angular/forms";
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { CarComponent } from './components/car/car.component';
-import { BrandComponent } from './components/brand/brand.component';
+import { CarComponent } from './components/cars/car/car.component';
+import { BrandComponent } from './components/brands/brand/brand.component';
 import { NaviComponent } from './components/navi/navi.component';
-import { ColorComponent } from './components/color/color.component';
+import { ColorComponent } from './components/colors/color/color.component';
 import { CustomerComponent } from './components/customer/customer.component';
 import { RentalComponent } from './components/rental/rental.component';
 import { CategoryComponent } from './components/category/category.component';
-import { CarDetailComponent } from './components/car-detail/car-detail.component';
+import { CarDetailComponent } from './components/cars/car-detail/car-detail.component';
 import { FilterCarPipe } from './pipes/filter-car.pipe';
 import { FilterBrandPipe } from './pipes/filter-brand.pipe';
 import { FilterColorPipe } from './pipes/filter-color.pipe';
+import { CreditcardComponent } from './components/creditcard/creditcard.component'
+
+
+import { ToastrModule } from 'ngx-toastr';
+import { RentAddComponent } from './components/rent-add/rent-add.component';
+import { BrandAddComponent } from './components/brands/brand-add/brand-add.component';
+import { ColorAddComponent } from './components/colors/color-add/color-add.component';
+import { CarAddComponent } from './components/cars/car-add/car-add.component';
+import { BrandUpdateComponent } from './components/brands/brand-update/brand-update.component';
+import { ColorUpdateComponent } from './components/colors/color-update/color-update.component';
+import { CarUpdateComponent } from './components/cars/car-update/car-update.component';
+
 
 @NgModule({
   declarations: [
@@ -30,13 +43,26 @@ import { FilterColorPipe } from './pipes/filter-color.pipe';
     CarDetailComponent,
     FilterCarPipe,
     FilterBrandPipe,
-    FilterColorPipe
+    FilterColorPipe,
+    CreditcardComponent,
+    RentAddComponent,
+    BrandAddComponent,
+    ColorAddComponent,
+    CarAddComponent,
+    BrandUpdateComponent,
+    ColorUpdateComponent,
+    CarUpdateComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    ToastrModule.forRoot({
+      positionClass:"toast-bottom-right"
+    }),
+    BrowserAnimationsModule,
+    ReactiveFormsModule
    
   ],
   providers: [],
