@@ -1,3 +1,17 @@
+
+##ScreenShots
+![home](https://user-images.githubusercontent.com/32998804/114320854-a8e87f00-9b20-11eb-88c0-c67f205189c3.PNG)
+
+![details](https://user-images.githubusercontent.com/32998804/114320859-b1d95080-9b20-11eb-8604-ba6fc7df4928.PNG)
+
+![rent](https://user-images.githubusercontent.com/32998804/114320878-c6b5e400-9b20-11eb-89c1-b819f1b569ce.PNG)
+
+![brand](https://user-images.githubusercontent.com/32998804/114320885-cd445b80-9b20-11eb-9984-caf59ec21801.PNG)
+
+![editProfil](https://user-images.githubusercontent.com/32998804/114320882-c9b0d480-9b20-11eb-91d8-ba5e150bc939.PNG)
+
+
+
 # Recapfrontend
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.5.
@@ -25,3 +39,4 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
