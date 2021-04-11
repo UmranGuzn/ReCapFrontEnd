@@ -4,7 +4,7 @@ import { Observable } from 'rxjs';
 import { Color } from '../models/color';
 import { ListResponseModel } from '../models/listResponseModel';
 import { ResponseModel } from '../models/responseModel';
-import { ItemResponseModel } from '../models/itemResponseModel';
+import { SingleResponseModel } from '../models/singleResponseModel';
 
 @Injectable({
   providedIn: 'root'
@@ -24,7 +24,7 @@ export class ColorService {
 
   getColorById(colorId:number){
     let newPath=this.apiUrl+"getbyid?colorId="+colorId;
-    return this.httpClient.get<ItemResponseModel<Color>>(newPath)
+    return this.httpClient.get<SingleResponseModel<Color>>(newPath)
   }
 
   update(color:Color):Observable<ResponseModel>{

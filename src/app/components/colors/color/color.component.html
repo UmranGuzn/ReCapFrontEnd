@@ -6,12 +6,25 @@
 		<div *ngIf="filterText" class="alert alert-primary mb-3">
 			{{filterText}} aradınız!
 		</div>
-		<div (click)="setCurrentColor(color)" *ngFor="let color of colors | filterColor:filterText" class="card mb-3"
+		<div class="row">
+			<div class="col-md-6">
+					<div (click)="setCurrentColor(color)" *ngFor="let color of colors | filterColor:filterText" class="card mb-3"
 			routerLink="/cars/color/{{color.colorId}}">
-			<div class="card-body">
+			<div class="card-body hover">
 				{{color.colorName}}
 			</div>
+		  </div>
+			</div>
+			<div class="col-md-6"  *ngIf="isAuthentication()">
+				<div class="card" *ngFor="let color of colors">
+					<div class="card-body">
+						<button class="btn btn-outline-warning" routerLink="update/{{color.colorId}}">Update</button>
+						<button class="btn btn-outline-danger" (click)="delete(color)">Delete</button>
+					</div>
+				</div>
+			</div>
 		</div>
+		
 
 	</div>
 </div>

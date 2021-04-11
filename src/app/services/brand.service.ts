@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Brand } from '../models/brand';
-import { ItemResponseModel } from '../models/itemResponseModel';
+import { SingleResponseModel } from '../models/singleResponseModel';
 import { ListResponseModel } from '../models/listResponseModel';
 import { ResponseModel } from '../models/responseModel';
 
@@ -25,7 +25,7 @@ export class BrandService {
 
   getBrandById(brandId:number){
     let newPath=this.apiUrl+"getbyid?id="+brandId
-    return this.httpClient.get<ItemResponseModel<Brand>>(newPath);
+    return this.httpClient.get<SingleResponseModel<Brand>>(newPath);
   }
 
   update(brand:Brand):Observable<ResponseModel>{

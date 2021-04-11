@@ -14,40 +14,52 @@
 
 </div>
 <div class="container mt-5">
-	<form>
+	<form [formGroup]="creditCardForm">
 		<div class="col-md-5">
-			<div class="mb-3">
-				<label for="cardNumber" class="form-label">Card Number</label>
-				<input type="text" class="form-control" id="cardNumber" placeholder="cardNumber">
+			<label for="customerId" class="form-label">customerIdr</label>
+			<div class="form-group mb-3">
+				
+				<input type="text" class="form-control" id="customerId" formControlName="customerId" placeholder="userId">
+			</div>
+		</div>
+		<div class="col-md-5">
+			<label for="cardNumber" class="form-label">Card Number</label>
+			<div class="form-group mb-3">
+				
+				<input type="text" class="form-control" id="cardNumber" formControlName="cardNumber" placeholder="cardNumber">
+			</div>
+		</div>
+		<div class="col-md-5">				
+			<label for="fullName" class="form-label">Full Name</label>
+			
+			<div class="form-group mb-3">
+	<input type="text" class="form-control" id="fullName" formControlName="fullName" placeholder="Full Name">
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-2">
+			<label for="expirationMonth" class="form-label">expirationMonth</label>
+			<div class="form-group mb-3">
+					<input type="number" class="form-control" id="expirationMonth" formControlName="expirationMonth" placeholder="expirationMonth">
+			</div>
+		</div>
+		<div class="col-md-2">
+		<label for="expirationYear" class="form-label">expirationYear</label>
+				<div class="form-group mb-3">
+					<input type="number" class="form-control" id="expirationYear" formControlName="expirationYear" placeholder="expirationYear">
+			</div>
+		</div>
+		</div>
+	
+		<div class="col-md-2">
+		<label for="cvv" class="form-label">CVV</label>
+				<div class="form-group mb-3">
+					<input type="number" class="form-control" id="cvv"  formControlName="cvv" placeholder="CVV">
 			</div>
 		</div>
 		<div class="col-md-5">
 			<div class="mb-3">
-				<label for="fullName" class="form-label">Full Name</label>
-				<input type="text" class="form-control" id="fullName" placeholder="Full Name">
-			</div>
-		</div>
-		<div class="col-md-5">
-			<div class="mb-3">
-				<label for="expirationMonth" class="form-label">expirationMonth</label>
-				<input type="number" class="form-control" id="expirationMonth" placeholder="expirationMonth">
-			</div>
-		</div>
-		<div class="col-md-5">
-			<div class="mb-3">
-				<label for="expirationYear" class="form-label">expirationYear</label>
-				<input type="number" class="form-control" id="expirationYear" placeholder="expirationYear">
-			</div>
-		</div>
-		<div class="col-md-5">
-			<div class="mb-3">
-				<label for="cvv" class="form-label">CVV</label>
-				<input type="number" class="form-control" id="cvv" placeholder="CVV">
-			</div>
-		</div>
-		<div class="col-md-5">
-			<div class="mb-3">
-				<button class="btn btn-danger">Pay</button>
+				<button class="btn btn-danger" (click)="pay()">Pay</button>
 			</div>
 		</div>
 	</form>

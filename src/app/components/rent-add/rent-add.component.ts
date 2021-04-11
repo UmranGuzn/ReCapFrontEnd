@@ -5,6 +5,7 @@ import { Car } from 'src/app/models/car';
 import { CarDetail } from 'src/app/models/carDetail';
 import { Customer } from 'src/app/models/customer';
 import { Rental } from 'src/app/models/rental';
+import { AuthService } from 'src/app/services/auth.service';
 import { CustomerService } from 'src/app/services/customer.service';
 import { RentalService } from 'src/app/services/rental.service';
 
@@ -29,15 +30,24 @@ export class RentAddComponent implements OnInit {
 
 
   constructor(private rentalService:RentalService,private router:Router,private customerService:CustomerService,
-    private toastr:ToastrService) { }
+    private toastr:ToastrService,private authService:AuthService) { }
 
   ngOnInit(): void {
    this.getCustomer();
-   console.log(this.car);
+  }
+  isLogin(){
+    if(this.authService.isAuthenticated()){
+      return true
+    }else{
+      this.toastr.error("Must be Login")
+      this.router.navigate([""])
+      return false;
+    }
   }
   getCustomer(){
     this.customerService.getCustomer().subscribe(response=>{
       this.customers=response.data;
+
     })
   }
 
@@ -53,9 +63,9 @@ export class RentAddComponent implements OnInit {
       customerId:parseInt(this.customerId.toString()),
       rentDate:this.rentDate,
       returnDate:this.returnDate
-      
-      
+
     }
+    console.log(rental)
     this.rentalService.add(rental).subscribe(response=>{
       this.toastr.info("payment Page");
       this.toastr.success(response.message);

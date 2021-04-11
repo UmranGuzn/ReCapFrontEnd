@@ -6,11 +6,26 @@
 		<div *ngIf="filterText" class="alert alert-primary mb-3">
 			{{filterText}} aradınız!
 		</div>
-		<div (click)="setCurrentBrand(brand)" *ngFor="let brand of brands | filterBrand:filterText" class="card mb-3"
-			routerLink="/cars/brand/{{brand.brandId}}">
-			<div class="card-body">
-				{{brand.brandName}}
-			</div>
+				<table class="table table-hover">
+					<thead>
+						<tr>
+							<th>Brand Name</th>
+						</tr>
+					</thead>
+					<tbody (click)="setCurrentBrand(brand)" *ngFor="let brand of brands | filterBrand:filterText"
+					routerLink="/cars/brand/{{brand.brandId}}">
+						<tr>
+							<td>
+								{{brand.brandName}}	
+							</td>
+							<td *ngIf="isAuthentication()"><button class="btn btn-warning" routerLink="update/{{brand.brandId}}">Update</button></td>
+							<td *ngIf="isAuthentication()"><button class="btn btn-danger" (click)="delete(brand)">Delete</button></td>
+						</tr>
+					</tbody>
+				</table>
+			<div >
+				
+		
 		</div>
 
 	</div>

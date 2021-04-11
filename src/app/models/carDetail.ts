@@ -8,4 +8,5 @@ export interface CarDetail{
 	descriptions:string;
 	modelYear:string;
 	imagePath:string;
+	fixedPoint:number
 }

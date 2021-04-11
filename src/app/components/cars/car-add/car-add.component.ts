@@ -37,7 +37,7 @@ export class CarAddComponent implements OnInit {
         descriptions:["",Validators.required],
         dailyPrice:["",Validators.required]
     })
-    console.log(this.formBuilder)
+    //console.log(this.formBuilder)
   }
 
   getBrands(){
